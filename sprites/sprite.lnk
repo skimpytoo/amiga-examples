@@ -1,0 +1,4 @@
+FROM LIB:c.o "sprite.o"
+TO "sprite"
+LIB LIB:sc.lib LIB:amiga.lib
+

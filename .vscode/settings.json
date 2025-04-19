@@ -1,0 +1,27 @@
+{
+  "files.exclude": {
+    "**/*.info": true,
+    "**/*.INFO": true,
+    "**/*.o": true,
+    "**/*.lnk": true,
+    "BUILD.INFO": true,
+    "DEBUG": true,
+    "DEBUG.INFO": true,
+    "EDIT.INFO": true,
+    "FIND.INFO": true,
+    "SCOPTIONS": true,
+    "SCOPTIONS.INFO": true
+  },
+  "files.associations": {
+    "*.c": "cpp",
+    "*.H": "cpp",
+    "smakefile": "plaintext"
+  },
+  "[plaintext]": {
+    "editor.formatOnSave": false
+  },
+  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
+  "C_Cpp.clang_format_sortIncludes": false,
+  "cmake.configureOnOpen": false,
+  "terminal.integrated.defaultProfile.windows": "PowerShell"
+}

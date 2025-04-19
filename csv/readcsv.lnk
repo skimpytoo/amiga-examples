@@ -1,0 +1,4 @@
+FROM LIB:c.o "readcsv.o"
+TO "readcsv"
+LIB LIB:sc.lib LIB:amiga.lib
+

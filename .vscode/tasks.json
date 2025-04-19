@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start UAE",
+      "type": "shell",
+      "command": "Taskkill /IM winuae64.exe /F; C:/Development/Amiga/UAE/winuae64.exe -f config-micro.uae -G",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      }
+    },
+    {
+      "label": "Stop UAE",
+      "type": "shell",
+      "command": "Taskkill /IM winuae64.exe /F",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      }
+    }
+    // More tasks here, if you need them.
+  ]
+}
