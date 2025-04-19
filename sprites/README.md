@@ -10,13 +10,13 @@ Creating sprites is rather easy. All you have to do is:
 
 [Amiga Sprites](http://amigadev.elowar.com/read/ADCD_2.1/Hardware_Manual_guide/node00AE.html)
 
-# Design sprite
+## Design sprite
 
 Sprites are 16 pixels wide and have no limitation in height.
 
 You can use, e.g., [Online Sprite](https://amigafonteditor.ozzyboshi.com/index_sprite.html) to define the shape.
 
-# Define the colors
+## Define the colors
 
 You can create up to 8 sprites. Each can use 4 colors, where one color represents transparency. This results in finally 3 colors. The used colors are fixed.
 
@@ -57,4 +57,12 @@ WaitTOF();
 
 ```c
 FreeSprite((WORD)sprite_num);
+```
+
+# Compile
+
+As compiler SAS/C 6.51 is used
+
+```cmd
+sc link sprite.c
 ```

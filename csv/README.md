@@ -12,3 +12,11 @@ In this example, the csv-file is read twice.
 ## Better solution
 
 Allocate the required memory incrementally and store the entries in a linked list.
+
+# Compile
+
+As compiler SAS/C 6.51 is used
+
+```cmd
+sc link readcsv.c
+```
