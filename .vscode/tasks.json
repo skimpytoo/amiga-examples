@@ -15,6 +15,19 @@
       }
     },
     {
+      "label": "Start UAE barebone",
+      "type": "shell",
+      "command": "Taskkill /IM winuae64.exe /F; C:/Development/Amiga/UAE/winuae64.exe -f config-micro.uae",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      }
+    },
+    {
       "label": "Stop UAE",
       "type": "shell",
       "command": "Taskkill /IM winuae64.exe /F",
