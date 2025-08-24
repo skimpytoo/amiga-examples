@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include <exec/types.h>
+#include <clib/timer_protos.h>
 #include <exec/interrupts.h>
 #include <exec/memory.h>
 #include <exec/exec.h>
@@ -35,7 +36,7 @@ __saveds __interrupt ULONG MyVBlankISR(void) {
     };
 
     return 0;
-}
+};
 
 int main(void) {
     struct MyCustomData vbData;

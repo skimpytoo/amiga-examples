@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include <clib/lowlevel_protos.h>
+#include <clib/timer_protos.h>
 #include <exec/types.h>
 #include <exec/interrupts.h>
 #include <exec/memory.h>
@@ -34,7 +35,7 @@ __saveds __interrupt ULONG MyVBlankISR(void) {
     };
 
     return 0;
-}
+};
 
 int main(void) {
     ULONG start;
@@ -69,5 +70,5 @@ int main(void) {
     printf("Frames: %lu, seconds: %lu\n",
            vbData.frameCount, vbData.seconds);
 
-    return 0;
+    return RETURN_OK;
 }

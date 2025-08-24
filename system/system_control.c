@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include <clib/lowlevel_protos.h>
+#include <clib/timer_protos.h>
 #include <exec/types.h>
 #include <exec/interrupts.h>
 #include <exec/memory.h>

@@ -34,7 +34,7 @@ __saveds __interrupt BOOL MyVBlankISR(void) {
         // Here you could do things like updating game logic, settings flags for the main routine.
     };
     return TRUE;
-}
+};
 
 int main(void) {
     struct Library *LowLevelBase = NULL;

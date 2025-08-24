@@ -43,11 +43,13 @@ VOID main(int argc, char **argv) {
     ULONG *screenColorPalette = NULL;
     ULONG *blackPalette = NULL;
 
-    // BlackPalette all values to 0 -> black
+    // +2 for LoadRGB32 format: [0] = number of colors, [last] = terminationMarker (0)
+    // BlackPalette all values to 0 -> black. Endpallete for fade to black
     blackPalette = (ULONG *)AllocMem(sizeof(ULONG) * (1 << SCREEN_DEPTH + 2), MEMF_ANY | MEMF_CLEAR);
+    // Actual screen palette
     screenColorPalette = (ULONG *)AllocMem(sizeof(ULONG) * (1 << SCREEN_DEPTH + 2), MEMF_ANY | MEMF_CLEAR);
 
-    if (blackPalette != NULL && screenColorPalette) {
+    if (blackPalette != NULL && screenColorPalette != NULL) {
         if (NULL == (GfxBase = (struct GfxBase *)OpenLibrary("graphics.library", 37L))) {
             return_code = RETURN_FAIL;
         } else {
@@ -142,7 +144,7 @@ void fade(struct Screen *screen, ULONG *startColPal, ULONG *endColPal, int parti
         for (e = 1; e < (loadRgb32ArraySize - 1); e++) {
             tempPal[e] = (long)((startColPal[e] >> 16) & 65535L);  // Initialize temporal colortable
             tmp = (long)((endColPal[e] >> 16) & 65535L);
-            value[e] = (long)((tmp - tempPal[e]) / partitions);  // Clac colorvalue increase
+            value[e] = (long)((tmp - tempPal[e]) / partitions);  // Claculate colorvalue increase
         }
 
         for (e = 0; e < steps; e++)  // Calculate all given steps
