@@ -86,5 +86,5 @@ int main(void) {
     printf("Counts no_system_overtake: %lu - Counts system_overtake: %lu Difference: %d\n",
            count_no_overtake, count_overtake, count_overtake - count_no_overtake);
 
-    return 0;
+    return RETURN_OK;
 }
