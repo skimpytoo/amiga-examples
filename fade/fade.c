@@ -37,7 +37,7 @@ struct IntuitionBase *IntuitionBase = NULL;
  */
 void fade(struct Screen *screen, ULONG *startPalette, ULONG *endPalette, int partitions, int steps);
 
-VOID main(int argc, char **argv) {
+int main(void) {
     struct Screen *screen;
     int return_code = RETURN_OK;
     ULONG *screenColorPalette = NULL;
