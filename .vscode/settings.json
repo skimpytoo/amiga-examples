@@ -23,5 +23,8 @@
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
   "C_Cpp.clang_format_sortIncludes": false,
   "cmake.configureOnOpen": false,
-  "terminal.integrated.defaultProfile.windows": "PowerShell"
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "[m68k]": {
+    "editor.rulers": []
+  }
 }

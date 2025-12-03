@@ -59,7 +59,7 @@ WaitTOF();
 FreeSprite((WORD)sprite_num);
 ```
 
-# Compile
+## Compile
 
 As compiler SAS/C 6.51 is used
 
