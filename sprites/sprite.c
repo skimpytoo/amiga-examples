@@ -17,8 +17,8 @@
 
 #include <stdlib.h>
 
-struct GfxBase *GfxBase = NULL;
-struct IntuitionBase *IntuitionBase = NULL;
+struct GfxBase* GfxBase = NULL;
+struct IntuitionBase* IntuitionBase = NULL;
 extern struct Custom far custom;
 
 #define SPRITE_HEIGHT 7  // Number of lines of sprite (see spriteData )
@@ -40,20 +40,20 @@ UWORD chip spriteData[] = {
     0, 0             // reserved, must init to 0 0
 };
 
-VOID main(int argc, char **argv) {
+VOID main(int argc, char** argv) {
     struct SimpleSprite sprite = {0};
 
     WORD sprite_num;
     SHORT move_x = 1, move_y = -1;
-    struct Screen *screen;
+    struct Screen* screen;
     int return_code;
 
     return_code = RETURN_OK;
 
-    if (NULL == (GfxBase = (struct GfxBase *)OpenLibrary("graphics.library", 37L))) {
+    if (NULL == (GfxBase = (struct GfxBase*)OpenLibrary("graphics.library", 37L))) {
         return_code = RETURN_FAIL;
     } else {
-        if (NULL == (IntuitionBase = (struct IntuitionBase *)OpenLibrary("intuition.library", 37L))) {
+        if (NULL == (IntuitionBase = (struct IntuitionBase*)OpenLibrary("intuition.library", 37L))) {
             return_code = RETURN_FAIL;
         } else {
             if (NULL == (screen = OpenScreenTags(NULL,
@@ -104,9 +104,9 @@ VOID main(int argc, char **argv) {
                 }
                 CloseScreen(screen);
             }
-            CloseLibrary((struct Library *)IntuitionBase);
+            CloseLibrary((struct Library*)IntuitionBase);
         }
-        CloseLibrary((struct Library *)GfxBase);
+        CloseLibrary((struct Library*)GfxBase);
     }
     exit(return_code);
 }
