@@ -1,7 +1,10 @@
+/* Simple joypad polling example using lowlevel.library.
+ * Demonstrates: open libs, read controller state, ESC to exit, WaitTOF to pace the loop.
+ */
 #include <clib/lowlevel_protos.h>
 #include <clib/exec_protos.h>
 #include <clib/graphics_protos.h>
-#include <CLIB/dos_protos.h>
+#include <clib/dos_protos.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -59,7 +62,7 @@ ULONG readJoyPad(BYTE port) {
         isJoypadUsed = TRUE;
     }
     if (!isJoypadUsed) {
-        return NULL;
+        return 0;  // no input detected
     }
     return state;
 }
@@ -89,14 +92,14 @@ int main(int argc, char** argv) {
     printf("Test joypad on port: %d. Press ESC to exit\n", PORT);
     while (GetKey() != ESC_KEY) {  // ESC to terminate
         controller = readJoyPad(PORT);
-        if (controller != NULL) {
+        if (controller != 0) {
             printf("\n");
         }
         // Small delay to avoid flooding the output
         WaitTOF();
     }
 
-    // Now we set back to auto-detection as we overrided it before.
+    // Restore auto-detection after forcing game controller mode
     SetJoyPortAttrs(PORT, SJA_Reinitialize);
 
     CloseLibrary((struct Library*)GfxBase);
